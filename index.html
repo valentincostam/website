@@ -4,111 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Valentín Costa · Web Developer</title>
+  <title>Valentín Costa · Frontend Developer</title>
   <link rel="icon" type="image/png" sizes="260x260" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <style>
     body {
       align-items: center;
       display: flex;
-      font-family: sans-serif;
+      font-family: Roboto, sans-serif;
       justify-content: center;
       margin: 0;
       min-height: 100vh;
-    }
-
-    .name {
       color: #222;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 3em;
-      font-weight: 400;
-      margin: 0;
-      text-align: center;
-      text-transform: uppercase;
     }
-
-    .name span {
-      font-weight: 700;
-    }
-
-    .profession {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 400;
-      text-align: center;
-      margin: 0;
-      color: #555;
-    }
-
-    .links {
-      list-style: none;
-      margin: 1em 0 0 0;
-      padding: 0;
-    }
-
-    .links li {
-      margin: .6em 0;
-      text-align: center;
-    }
-
-    .links li a {
-      color: #333;
-      background-color: #eee;
-      display: block;
-      padding: .8em;
-      font-size: .9em;
-      text-decoration: none;
-    }
-
-    .links li a:hover {
-      background-color: #333;
-      color: #fff;
+    
+    .container {
+      max-width: 24em;
+      padding: 2em;
     }
 
     .photo {
-      bottom: 0;
-      height: 70vh;
-      filter: grayscale(1);
-      position: fixed;
-      right: 0;
-      user-select: none;
+      --photo-size: 12em; 
+      height: var(--photo-size);
+      width: var(--photo-size);
+      display: block;
+      margin: 0 auto;
+      border-radius: 100%;
     }
 
-    .photo:hover {
-      filter: none;
+    .name {
+      text-align: center;
     }
 
     @media (max-width: 46.25em) {
-      body {
-        display: block;
-        min-height: auto;
-      }
-      
-      .container {
-        margin: 2em;
-      }
 
-      .photo {
-        display: block;
-        height: auto;
-        position: static;
-        transform: rotateY(180deg);
-        width: 50vw;
-      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="name">Valentín<span>Costa</span></h1>
-    <h2 class="profession">Web Developer</h2>
-    <ul class="links">
-      <li><a href="https://valentincosta.com/cv">Curriculum Vitae</a></li>
-      <li><a href="https://www.linkedin.com/in/valentincosta/">LinkedIn</a></li>
-      <li><a href="https://github.com/valeco">GitHub</a></li>
-      <li><a href="https://twitter.com/valentincostam">Twitter</a></li>
-      <li><a href="mailto:valentincostam@gmail.com">Email</a></li>
+    <img class="photo" src="img/me.jpg" alt="Photo of Valentín Costa">
+    <h1 class="name">Valentín Costa</h1>
+    <p>Hi there!</p>
+    <p>I'm a <strong>frontend developer</strong> from Argentina, currently working at <a href="https://www.neuralys.io/">Neuralys</a>.</p>
+    <p>If you want to know a little about me, here is my <a href="/cv">curriculum vitae</a>.</p>
+    <p>These are some of my personal projects:</p>
+    <ul>
+      <li><a href="https://valentincosta.com/isi">Plan de Estudios de ISI</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PL3TT5ZszvgtTvOcma8Cr5AUZ1mABMJLV6">Personas de la UTN CDU</a></li>
+      <li><a href="https://valentincosta.com/utnator">UTNator</a></li>
     </ul>
+    <p>You can reach me at:</p>
+    <ul>
+      <li><a href="mailto:valentincostam@gmail.com">Email</a></li>
+      <li><a href="https://twitter.com/valentincostam">Twitter</a></li>
+      <li><a href="https://instagram.com/valentincostam">Instagram</a></li>
+      <li><a href="https://github.com/valentincostam">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/valentincostam">LinkedIn</a></li>
+    </ul>
+    <p>Hope you're doing great.</p>
+    <p>Have a nice one!</p>
   </div>
-  <img class="photo" src="img/me.bg.png" alt="Photo of Valentín Costa">
 </body>
 </html>
