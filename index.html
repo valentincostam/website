@@ -6,16 +6,37 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Valentín Costa · Frontend Developer</title>
   <link rel="icon" type="image/png" sizes="260x260" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      --bg-color: #eee;
+      --color: #222;
+      --link-color: #00e;
+
       align-items: center;
       display: flex;
-      font-family: Roboto, sans-serif;
+      font-family: Inter, sans-serif;
       justify-content: center;
       margin: 0;
       min-height: 100vh;
-      color: #222;
+      background-color: var(--bg-color);
+      color: var(--color);
+      transition: background-color .3s, color .3s;
+      letter-spacing: -.02em;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      border-bottom: 2px solid var(--link-color);
+      transition: color .3s, border-color .3s;
+    }
+
+    .dark {
+      --bg-color: #111;
+      --color: #fff;
+      --link-color: #7ebeff;
     }
     
     .container {
@@ -32,16 +53,8 @@
       border-radius: 100%;
     }
     
-    .test {
-      display: none;
-    }
-
     .name {
       text-align: center;
-    }
-
-    @media (max-width: 46.25em) {
-
     }
   </style>
 </head>
@@ -67,6 +80,38 @@
     </ul>
     <p>Hope you're doing great.</p>
     <p>Have a nice one!</p>
+    <button id="theme-switch">Switch to dark</button>
   </div>
+
+  <script>
+    const isDark = localStorage.getItem('isDark');
+    const themeSwitch = document.getElementById('theme-switch');
+
+    if (isDark) {
+      document.body.classList.add('dark');
+      themeSwitch.innerText = 'Switch to light';
+    }
+
+    function switchTheme() {
+      document.body.classList.toggle('dark');
+
+      if (document.body.classList.contains('dark')) {
+        themeSwitch.innerText = 'Switch to light';
+        localStorage.setItem('isDark', true);
+      } else {
+        themeSwitch.innerText = 'Switch to dark';
+        localStorage.setItem('isDark', false);
+      }
+    }
+
+    themeSwitch.addEventListener('click', switchTheme);
+
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    darkModeMediaQuery.addListener((e) => {
+      const isDark = e.matches;
+      document.body.classList.toggle('dark', isDark);
+    });
+  </script>
 </body>
 </html>
