@@ -8,15 +8,19 @@
   <link rel="icon" type="image/png" sizes="260x260" href="img/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --transition-duration: .3s;
+    }
+
     .light {
       --bg-color: #eee;
-      --color: #222;
+      --text-color: #222;
       --link-color: #004ad2;
     }
 
     .dark {
       --bg-color: #111;
-      --color: #fff;
+      --text-color: #fff;
       --link-color: #7ebeff;
     }
 
@@ -28,16 +32,16 @@
       margin: 0;
       min-height: 100vh;
       background-color: var(--bg-color);
-      color: var(--color);
+      color: var(--text-color);
       transition:
-        background-color .3s,
-        color .3s;
+        background-color var(--transition-duration),
+        color var(--transition-duration);
       letter-spacing: -.02em;
       line-height: 1.5;
     }
 
     ::selection {
-      background-color: var(--color);
+      background-color: var(--text-color);
       color: var(--bg-color);
     }
 
@@ -47,8 +51,8 @@
       text-decoration: none;
       border-bottom: 1px dotted var(--link-color);
       transition:
-        border-color .3s,
-        color .3s;
+        border-color var(--transition-duration),
+        color var(--transition-duration);
     }
     
     .container {
@@ -67,6 +71,30 @@
     
     .name {
       text-align: center;
+    }
+
+    #theme-switch {
+      display: flex;
+      align-items: center;
+      padding: .5em .7em;
+      border: 0;
+      background-color: var(--text-color);
+      color: var(--bg-color);
+      border-radius: .3em;
+      cursor: pointer;
+      margin-top: 3em;
+      transition:
+        background-color var(--transition-duration),
+        color var(--transition-duration);
+    }
+
+    #theme-switch .icon {
+      --icon-size: 16px;
+      height: var(--icon-size);
+      width: var(--icon-size);
+      margin-right: .4em;
+      fill: var(--bg-color);
+      transition: fill var(--transition-duration);
     }
   </style>
 </head>
@@ -92,11 +120,21 @@
     </ul>
     <p>Hope you're doing great.</p>
     <p>Have a nice one!</p>
-    <a id="theme-switch">Switch to dark</a>
+    <button id="theme-switch">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        class="icon">
+        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10v-20zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"/>
+      </svg>
+      <span class="text">Switch to dark</span>
+    </button>
   </div>
 
   <script>
     const themeSwitch = document.getElementById('theme-switch');
+    const themeSwitchText = themeSwitch.querySelector('.text');
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     let currentTheme = localStorage.getItem('currentTheme');
@@ -106,13 +144,13 @@
     }
     
     document.body.classList.add(currentTheme);
-    themeSwitch.innerText = currentTheme == 'dark' ? 'Switch to light' : 'Switch to dark';
+    themeSwitchText.innerText = currentTheme == 'dark' ? 'Switch to light' : 'Switch to dark';
 
     function switchTheme() {
       document.body.classList.remove(currentTheme);
       currentTheme = currentTheme == 'dark' ? 'light' : 'dark';
       document.body.classList.add(currentTheme);
-      themeSwitch.innerText = currentTheme == 'dark' ? 'Switch to light' : 'Switch to dark';
+      themeSwitchText.innerText = currentTheme == 'dark' ? 'Switch to light' : 'Switch to dark';
       localStorage.setItem('currentTheme', currentTheme);
     }
 
