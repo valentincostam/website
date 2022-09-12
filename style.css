@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   background-color: var(--bg-color);
   color: var(--text-color);
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
   line-height: 1.5;
 }
 
@@ -49,7 +49,7 @@ a:focus {
 }
 
 a:hover {
-  animation: rainbow .8s linear infinite;
+  animation: rainbow 0.8s linear infinite;
 }
 
 @keyframes rainbow {
@@ -66,8 +66,15 @@ p:last-child {
 }
 
 .container {
-  max-width: 26rem;
+  max-width: 70ch;
   padding: var(--large-gap) 0;
+  border-left: 1px solid var(--border-color);
+}
+
+.header {
+  padding: var(--large-gap);
+  display: flex;
+  align-items: center;
 }
 
 .header__photo {
@@ -75,20 +82,8 @@ p:last-child {
   height: var(--photo-size);
   width: var(--photo-size);
   display: block;
-  margin: 0 auto;
   filter: var(--photo-filter);
-}
-
-.header__photo:hover {
-  animation: rainbow .8s linear infinite;
-}
-
-.header__text {
-  text-align: center;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  padding: var(--large-gap);
-  margin-bottom: 0;
+  margin-right: var(--large-gap);
 }
 
 .header__title {
@@ -96,8 +91,11 @@ p:last-child {
   line-height: 1;
 }
 
+.header__role {
+  margin: 0;
+}
+
 .section {
-  border-bottom: 1px solid var(--border-color);
   padding: var(--large-gap);
 }
 
@@ -105,6 +103,15 @@ p:last-child {
   margin: 0;
   line-height: 1;
   margin-bottom: var(--gap);
+}
+
+.section__list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.section__item {
+  margin-bottom: 0.4rem;
 }
 
 .lapse {
@@ -145,13 +152,14 @@ p:last-child {
 .theme-button {
   display: flex;
   align-items: center;
-  padding: .5rem .7rem;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.6rem;
   border: 0;
   background-color: var(--text-color);
   color: var(--bg-color);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   cursor: pointer;
-  margin: var(--large-gap) auto 0;
+  margin: var(--large-gap);
 }
 
 .theme-button:focus {
@@ -163,6 +171,6 @@ p:last-child {
   --icon-size: 16px;
   height: var(--icon-size);
   width: var(--icon-size);
-  margin-right: .4em;
+  margin-right: 0.4em;
   fill: var(--bg-color);
 }
