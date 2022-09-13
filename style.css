@@ -66,7 +66,7 @@ p:last-child {
 }
 
 .container {
-  max-width: 70ch;
+  max-width: 43rem;
   padding: var(--large-gap) 0;
   border-left: 1px solid var(--border-color);
 }
@@ -78,7 +78,7 @@ p:last-child {
 }
 
 .header__photo {
-  --photo-size: 7rem;
+  --photo-size: 6rem;
   height: var(--photo-size);
   width: var(--photo-size);
   display: block;
@@ -87,12 +87,15 @@ p:last-child {
 }
 
 .header__title {
+  font-size: 1.7rem;
   margin: 0;
   line-height: 1;
 }
 
 .header__role {
   margin: 0;
+  line-height: 1;
+  margin-top: 0.4rem;
 }
 
 .section {
@@ -173,4 +176,10 @@ p:last-child {
   width: var(--icon-size);
   margin-right: 0.4em;
   fill: var(--bg-color);
+}
+
+@media screen and (max-width: 43rem) {
+  .container {
+    border: 0;
+  }
 }
