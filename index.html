@@ -13,7 +13,9 @@
   <body>
     <div class="container">
       <header class="header">
-        <img class="header__photo" src="valentin-costa.png" alt="Valentín Costa" />
+        <div class="header__picture">
+          <img class="header__photo" src="valentin-costa.png" alt="Valentín Costa" />
+        </div>
         <div class="header__text">
           <h1 class="header__title">Valentín Costa</h1>
           <p class="header__role">Front-End Engineer</p>
@@ -22,15 +24,15 @@
 
       <section class="section">
         <h2 class="section__title">About</h2>
-        <p>
+        <p class="section__paragraph">
           I specialize in <strong>front-end web development</strong> with an eye for logical, clean interfaces. What
           does that mean? I build web applications that make people say <em>"wow, that was easy."</em>
         </p>
-        <p>
+        <p class="section__paragraph">
           Besides helping a startup to be acquired, I created <a href="https://plande.app">Plande</a>, a web app that
-          changed the way students plan and organize their college degrees.
+          will change the way students plan and organize their college degrees.
         </p>
-        <p>
+        <p class="section__paragraph">
           You can know more about my experience and education on
           <a href="https://www.linkedin.com/in/valentincostam">my LinkedIn profile</a>. And here is
           <a href="cv.pdf">my curriculum vitae</a>.
@@ -41,7 +43,7 @@
         <h2 class="section__title">Projects</h2>
         <ul class="section__list">
           <li class="section__item">
-            <a href="https://plande.app">Plande</a>: Plan and organize your college degree courses with ease.
+            <a href="https://plande.app">Plande</a>: Interactive curriculum of college degrees.
           </li>
           <li class="section__item">
             <a href="https://botone.ar">Botonera</a>: Soundboard made up of viral Argentian videos' sayings.
@@ -54,7 +56,7 @@
             weigh.
           </li>
           <li class="section__item">
-            <a href="https://isi.ar">ISI</a>: The curriculum of my college degree in a web application.
+            <a href="https://isi.ar">ISI</a>: The interactive curriculum of my college degree.
           </li>
           <li class="section__item">
             <a href="https://utnator.vercel.app">UTNator</a>: Download a PNG image of the UTN FRCU's logo in different
@@ -69,7 +71,7 @@
 
       <section class="section">
         <h2 class="section__title">Code</h2>
-        <p>See some of my projects and experiments on:</p>
+        <p class="section__paragraph">See some of my projects and experiments on:</p>
         <ul class="social">
           <li class="social__item">
             <svg width="24" height="24" viewBox="0 0 24 24" class="social__icon">
@@ -94,7 +96,7 @@
 
       <section class="section">
         <h2 class="section__title">Contact</h2>
-        <p>You can reach me at:</p>
+        <p class="section__paragraph">You can reach me at:</p>
         <ul class="social">
           <li class="social__item">
             <svg width="24" height="24" viewBox="0 0 24 24" class="social__icon">
@@ -146,12 +148,12 @@
       }
 
       document.body.classList.toggle('dark', isDark)
-      themeButtonText.innerText = `Switch to ${isDark ? 'light' : 'dark'} theme`
+      themeButtonText.innerText = `${isDark ? 'Light' : 'Dark'} theme`
 
       function toggleDarkTheme() {
         isDark = !isDark
         document.body.classList.toggle('dark', isDark)
-        themeButtonText.innerText = `Switch to ${isDark ? 'light' : 'dark'} theme`
+        themeButtonText.innerText = `${isDark ? 'Light' : 'Dark'} theme`
         localStorage.setItem('isDark', isDark)
       }
 
