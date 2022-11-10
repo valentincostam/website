@@ -41,30 +41,48 @@
 
       <section class="section">
         <h2 class="section__title">Projects</h2>
-        <ul class="section__list">
-          <li class="section__item">
-            <a href="https://plande.app">Plande</a>: Interactive curriculum of college degrees.
+        <ul class="projects">
+          <li class="projects__item">
+            <a href="https://plande.app" class="projects__link">
+              <span class="projects__name">Plande</span>
+              <p class="projects__description">Interactive curriculum of college degrees.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://botone.ar">Botonera</a>: Soundboard made up of viral Argentian videos' sayings.
+          <li class="projects__item">
+            <a href="https://botone.ar" class="projects__link">
+              <span class="projects__name">Botonera</span>
+              <p class="projects__description">Soundboard made up of viral Argentian videos' sayings.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://empanad.app">empanad.app</a>: Ordering empanadas with friends made easy.
+          <li class="projects__item">
+            <a href="https://empanad.app" class="projects__link">
+              <span class="projects__name">empanad.app</span>
+              <p class="projects__description">Ordering empanadas with friends made easy.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://billetometro.com">Billetómetro</a>: Find out how much your Argentine pesos measure and
-            weigh.
+          <li class="projects__item">
+            <a href="https://billetometro.com" class="projects__link">
+              <span class="projects__name">Billetómetro</span>
+              <p class="projects__description">Find out how much your Argentine pesos measure and weigh.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://isi.ar">ISI</a>: The interactive curriculum of my college degree.
+          <li class="projects__item">
+            <a href="https://isi.ar" class="projects__link">
+              <span class="projects__name">ISI</span>
+              <p class="projects__description">The interactive curriculum of my college degree.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://utnator.vercel.app">UTNator</a>: Download a PNG image of the UTN FRCU's logo in different
-            sizes and colors.
+          <li class="projects__item">
+            <a href="https://utnator.vercel.app" class="projects__link">
+              <span class="projects__name">UTNator</span>
+              <p class="projects__description">Download the UTN FRCU's logo in different sizes and colors.</p>
+            </a>
           </li>
-          <li class="section__item">
-            <a href="https://www.youtube.com/playlist?list=PL3TT5ZszvgtTvOcma8Cr5AUZ1mABMJLV6">Personas de la UTN CDU</a
-            >: Interviews with people who belong to the UTN FRCU community.
+          <li class="projects__item">
+            <a href="https://www.youtube.com/playlist?list=PL3TT5ZszvgtTvOcma8Cr5AUZ1mABMJLV6" class="projects__link">
+              <span class="projects__name">Personas de la UTN CDU</span>
+              <p class="projects__description">Interviews with people from the UTN FRCU community.</p>
+            </a>
           </li>
         </ul>
       </section>
@@ -158,6 +176,17 @@
       }
 
       themeButton.addEventListener('click', toggleDarkTheme)
+
+      document.querySelector('.projects').onmousemove = (e) => {
+        for (const card of document.getElementsByClassName('projects__item')) {
+          const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top
+
+          card.style.setProperty('--cursor-x', `${x}px`)
+          card.style.setProperty('--cursor-y', `${y}px`)
+        }
+      }
     </script>
   </body>
 </html>
